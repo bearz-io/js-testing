@@ -1,8 +1,8 @@
 import type { TestContext, TestFunction, TestParams } from "./types.ts";
 
 const importName = "bun:test";
-const  { test: bunTest } = await import(importName);
-const { defaults } = await import("./globals.ts")
+const { test: bunTest } = await import(importName);
+const { defaults } = await import("./globals.ts");
 
 /**
  * Defines a test

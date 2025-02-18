@@ -112,6 +112,3 @@ jobs:
               --title="${TAG#v}" \
               --generate-notes \
               --discussion-category "Releases"
-
-
-

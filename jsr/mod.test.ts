@@ -19,16 +19,16 @@ test("test::async", async () => {
             resolve(0);
         }, 1000);
     });
-    
+
     await p;
 });
 
-test("test::done", { done: true}, (_, done) => {
+test("test::done", { done: true }, (_, done) => {
     let finished = false;
     const handle = setTimeout(() => {
         finished = true;
     }, 10000);
-    
+
     if (finished) {
         throw new Error("Finished should be false");
     }
@@ -44,4 +44,3 @@ test("test:timeout", { timeout: 1000, skip: true }, () => {
         }, 2000);
     });
 });
-

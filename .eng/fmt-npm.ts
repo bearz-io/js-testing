@@ -3,7 +3,6 @@ import { dirname, fromFileUrl } from "jsr:@std/path@1";
 const __dirname = dirname(fromFileUrl(import.meta.url));
 const pwd = dirname(__dirname);
 
-
 const cmd = new Deno.Command("deno", {
     args: [
         "fmt",

@@ -1,5 +1,4 @@
 import { dirname, fromFileUrl } from "jsr:@std/path@1";
-import { exists } from "jsr:@std/fs@1";
 import { build, emptyDir, type EntryPoint } from "jsr:@deno/dnt";
 
 const __dirname = dirname(fromFileUrl(import.meta.url));
@@ -119,4 +118,4 @@ if (o.code !== 0) {
     throw new Error("Failed to run yarn install --package-lock-only");
 }
 
-await import ("./fmt-npm.ts");
+await import("./fmt-npm.ts");

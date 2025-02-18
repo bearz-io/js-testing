@@ -2,7 +2,7 @@
     "fmt": {
         "lineWidth": 100,
         "indentWidth": 4,
-        "exclude": ["npm"]
+        "exclude": ["npm/**", ".github/**", "**/*.md"] 
     },
 
     "exclude": ["./npm"],
@@ -55,6 +55,10 @@
         "fmt": {
             "command": "deno fmt && deno lint",
             "description": "Prepare for publish"
+        },
+        "cp:md": {
+            "command": "cp ./README.md ./jsr && cp ./LICENSE.md ./jsr",
+            "description": "Copy README.md and LICENSE.md to jsr folder"
         },
         "publish:prep": {
             "dependencies": [

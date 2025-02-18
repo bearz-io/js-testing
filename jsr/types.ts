@@ -1,18 +1,19 @@
-
 /**
  * The test context. If the test framework supports it, this will be passed to the test function.
  */
 export interface TestContext extends Record<string | symbol, unknown | undefined> {
-
 }
 
 /**
  * A test function
- * 
+ *
  * @param context - the test context.
  * @param done - the done function which can be used to force the test to finish.
  */
-export type TestFunction = (context: TestContext, done: (e?: unknown) => void) => Promise<void> | void;
+export type TestFunction = (
+    context: TestContext,
+    done: (e?: unknown) => void,
+) => Promise<void> | void;
 
 /**
  * Test parameters
@@ -24,7 +25,7 @@ export interface TestParams extends Record<string | symbol, unknown | undefined>
     skip?: boolean;
     /**
      * The timeout for the test
-     */ 
+     */
     timeout?: number;
 }
 
