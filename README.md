@@ -2,7 +2,8 @@
 
 ## Overview
 
-An adapter for the builtin Deno, Bun, and NodeJs testing frameworks.
+An adapter for the builtin Deno, Bun, and NodeJs testing frameworks which is
+useful for library authors that are targeting multiple runtimes.
 
 The aim is provide a standard subset to run tests against all 3 runtimes
 rather than implement all features and test styles until node:test is available
@@ -60,8 +61,12 @@ test("timeout", { timeout: 2000 }, () => {
 ## Notes
 
 This library was written with the frustration of dealing with @denoland/dnt which shims Deno.test
-and generates alot of excess code and its cleaner to just run `node --test` and `bun test` to ensure
+and generates alot of excess code. It is cleaner to just run `node --test` and `bun test` to ensure
 that the tests are executed against the other runtimes.
+
+I also tried vitest. Vitest was failing to work with deno outside of very limit contexts.
+Vitest is cool, but it is/was heavy on the dependencies.  The number of dependencies increased
+times for scripts to run and and it required dealing with the headache of nodeModulesDir=auto.
 
 ## License
 
