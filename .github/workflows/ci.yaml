@@ -41,7 +41,11 @@ jobs:
 
       - name: Generate Code Coverage
         if: startsWith(github.ref, 'refs/heads/main') && matrix.os == 'ubuntu-latest'
-        run: deno task cov
+        run: deno task cov:lcov
+
+      - name: Generate Code Coverage Report
+        if: startsWith(github.ref, 'refs/heads/main') && matrix.os == 'ubuntu-latest'
+        run: deno task cov:report
         
       - name: Upload Code Coverage
         uses: codecov/codecov-action@v5
