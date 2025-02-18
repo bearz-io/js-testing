@@ -4,7 +4,18 @@ const importName = "bun:test";
 const  { test: bunTest } = await import(importName);
 const { defaults } = await import("./globals.ts")
 
+/**
+ * Defines a test
+ * @param name The name of the test.
+ * @param options The test options.
+ * @param fn The test function.
+ */
 export async function test(name: string, options?: TestParams, fn?: TestFunction): Promise<void>;
+/**
+ * Defines a test
+ * @param name The name of the test.
+ * @param fn The test function.
+ */
 export async function test(name: string, fn: TestFunction): Promise<void>;
 export async function test(): Promise<void> {
     const name = arguments[0];

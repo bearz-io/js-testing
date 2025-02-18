@@ -2,7 +2,18 @@ import type { TestContext, TestFunction, TestParams } from "./types.ts";
 const importName = "node:test";
 const { test: nodeTest } = await import(importName);
 
+/**
+ * Defines a test
+ * @param name The name of the test.
+ * @param options The test options.
+ * @param fn The test function.
+ */
 export function test(name: string, options?: TestParams, fn?: TestFunction) : void
+/**
+ * Defines a test
+ * @param name The name of the test.
+ * @param fn The test function.
+ */
 export function test(name: string, fn: TestFunction) : void 
 export function test() : void {
     const name = arguments[0];

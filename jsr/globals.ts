@@ -1,3 +1,7 @@
+
+/**
+ * The globals variable which is tied to `globalThis`.
+ */
 // deno-lint-ignore no-explicit-any
 export const globals : typeof globalThis & Record<string, any> = globalThis;
 
@@ -9,7 +13,9 @@ if (globals.process && globals.process.env && globals.process.env["TESTING_TIMEO
     }
 }
 
-
+/**
+ * The global defaults
+ */
 export const defaults = {
     timeout,
 }

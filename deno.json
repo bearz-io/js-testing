@@ -47,8 +47,8 @@
         },
         "cov": {
             "dependencies": [
-                "cov:report",
-                "cov:lcov"
+                "cov:lcov",
+                "cov:report"
             ],
             "description": "Run and report test coverage",
             "command": "echo 'done'"
