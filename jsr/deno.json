@@ -1,0 +1,9 @@
+{
+    "name": "@bearz/testing",
+    "version": "0.0.0",
+    "description": "A testing library adapter for builtin Deno, Bun, and NodeJs frameworks",
+    "keywords": ["testing", "deno", "bun", "nodejs", "test", "cross-platform"],
+    "exports": {
+        "." : "./mod.ts"
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "fmt": {
+        "lineWidth": 100,
+        "indentWidth": 4,
+        "exclude": ["npm"]
+    },
+
+    "exclude": ["npm"],
+
+    "workspace": [
+        "jsr"
+    ],
+    "imports": {
+        
+        "@types/bun": "npm:@types/bun@^1.2.2"
+    }
+}
