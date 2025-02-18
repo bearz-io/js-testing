@@ -2,12 +2,11 @@
 
 ## Overview
 
-An adapter for the builtin Deno, Bun, and NodeJs testing frameworks which is
-useful for library authors that are targeting multiple runtimes.
+An adapter for the builtin Deno, Bun, and NodeJs testing frameworks which is useful for library
+authors that are targeting multiple JavaScript runtimes.
 
-The aim is provide a standard subset to run tests against all 3 runtimes
-rather than implement all features and test styles until node:test is available
-in all three testing runtimes.
+The librar provides a standard subset to run tests against all 3 runtimes rather than implement all
+features and test styles until node:test is available in all three testing runtimes.
 
 ![logo](https://raw.githubusercontent.com/bearz-io/js/refs/heads/main/eng/assets/bearz.io.png)
 
@@ -26,16 +25,14 @@ psuedo code to show off the test function.
 ```typescript
 import { test } from "@bearz/testing";
 
-
 test("simple", () => {
     console.log("test");
 });
 
 test("use done", (_, done) => {
-
     done(); // finishes the test.
 
-    done(new Error()) // finishes the test and throws an error.
+    done(new Error()); // finishes the test and throws an error.
 });
 
 test("async", async () => {
@@ -44,15 +41,14 @@ test("async", async () => {
     await exists("test.txt");
 });
 
-test("skip", { skip: true}, () => {
+test("skip", { skip: true }, () => {
     console.log("skipped test");
 });
 
 test("timeout", { timeout: 2000 }, () => {
     // the test timeout will be exceeded
-    setTimeout(() => { }, 3000);
+    setTimeout(() => {}, 3000);
 });
-
 ```
 
 ## Functions
@@ -61,13 +57,10 @@ test("timeout", { timeout: 2000 }, () => {
 
 ## Notes
 
-This library was written with the frustration of dealing with @denoland/dnt which shims Deno.test
-and generates alot of excess code. It is cleaner to just run `node --test` and `bun test` to ensure
-that the tests are executed against the other runtimes.
+This library was written to deal with the frustration of targeting multiple JavaScript runtimes.
 
-I also tried vitest. Vitest was failing to work with deno outside of very limit contexts.
-Vitest is cool, but it is/was heavy on the dependencies.  The number of dependencies increased
-times for scripts to run and and it required dealing with the headache of nodeModulesDir=auto.
+Vitest was failing to work with deno outside of very limited context. Vitest is cool, but it is/was
+heavy on the dependencies and it was failing run on Deno outside of a very limited context.
 
 ## License
 

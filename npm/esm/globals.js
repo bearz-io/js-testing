@@ -1,3 +1,6 @@
+/**
+ * The globals variable which is tied to `globalThis`.
+ */
 // deno-lint-ignore no-explicit-any
 import * as dntShim from "./_dnt.shims.js";
 export const globals = dntShim.dntGlobalThis;
@@ -8,6 +11,9 @@ if (globals.process && globals.process.env && globals.process.env["TESTING_TIMEO
         timeout = t;
     }
 }
+/**
+ * The global defaults
+ */
 export const defaults = {
     timeout,
 };

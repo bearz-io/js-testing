@@ -2,7 +2,7 @@
     "fmt": {
         "lineWidth": 100,
         "indentWidth": 4,
-        "exclude": ["npm/**", ".github/**", "**/*.md"] 
+        "exclude": ["npm/**", ".github/**", "**/*.md"]
     },
 
     "exclude": ["./npm"],
